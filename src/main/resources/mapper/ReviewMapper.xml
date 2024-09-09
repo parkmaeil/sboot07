@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatis.repository.ReviewMapper">
+
+    <insert id="save" parameterType="com.example.mybatis.entity.Review">
+        insert into review(book_id, content, cost, customer_id)
+        values(#{book_id}, #{content}, #{cost}, #{customer_id})
+    </insert>
+
+    <select id="findAll" parameterType="Long" resultType="com.example.mybatis.entity.Review">
+        select * from review where book_id=#{book_id}
+    </select>
+
+</mapper>
